@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_forms_user_infos",
+  "info": {
+    "displayName": "userInfo",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true,
+      "regex": "^(?:\\+?57)?3\\d{9}$"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}

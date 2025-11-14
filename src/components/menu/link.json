@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_menu_links",
+  "info": {
+    "displayName": "Menu Link",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "default": "link",
+      "enum": [
+        "link",
+        "button"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_forms_contact_infos",
+  "info": {
+    "displayName": "contactInfo",
+    "icon": "phone"
+  },
+  "options": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true,
+      "regex": "^(?:\\+?57)?3\\d{9}$"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  },
+  "config": {}
+}
