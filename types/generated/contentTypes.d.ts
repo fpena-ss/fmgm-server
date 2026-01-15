@@ -440,6 +440,11 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    preview: {
+      enabled: true;
+    };
+  };
   attributes: {
     body: Schema.Attribute.Blocks & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
@@ -473,6 +478,11 @@ export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    preview: {
+      enabled: true;
+    };
+  };
   attributes: {
     body: Schema.Attribute.Blocks & Schema.Attribute.Required;
     contactInfo: Schema.Attribute.Component<'forms.contact-info', false> &
@@ -505,6 +515,11 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    preview: {
+      enabled: true;
+    };
+  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -532,6 +547,11 @@ export interface ApiHeaderMenuHeaderMenu extends Struct.SingleTypeSchema {
   };
   options: {
     draftAndPublish: true;
+  };
+  pluginOptions: {
+    preview: {
+      enabled: true;
+    };
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -563,6 +583,11 @@ export interface ApiInicioInicio extends Struct.SingleTypeSchema {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    preview: {
+      enabled: true;
+    };
+  };
   attributes: {
     Body: Schema.Attribute.DynamicZone<
       [
@@ -580,6 +605,63 @@ export interface ApiInicioInicio extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::inicio.inicio'
     > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiThemeTheme extends Struct.SingleTypeSchema {
+  collectionName: 'themes';
+  info: {
+    displayName: 'Theme';
+    pluralName: 'themes';
+    singularName: 'theme';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    preview: {
+      enabled: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    fmgmBackgroudColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<
+        'plugin::color-picker.color',
+        {
+          format: 'hex';
+        }
+      >;
+    fmgmBlueColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<
+        'plugin::color-picker.color',
+        {
+          format: 'hex';
+        }
+      >;
+    fmgmGreenColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<
+        'plugin::color-picker.color',
+        {
+          format: 'hex';
+        }
+      >;
+    fmgmLimeColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<
+        'plugin::color-picker.color',
+        {
+          format: 'hex';
+        }
+      >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1103,6 +1185,7 @@ declare module '@strapi/strapi' {
       'api::footer.footer': ApiFooterFooter;
       'api::header-menu.header-menu': ApiHeaderMenuHeaderMenu;
       'api::inicio.inicio': ApiInicioInicio;
+      'api::theme.theme': ApiThemeTheme;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

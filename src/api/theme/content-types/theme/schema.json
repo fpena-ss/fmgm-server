@@ -1,0 +1,47 @@
+{
+  "kind": "singleType",
+  "collectionName": "themes",
+  "info": {
+    "singularName": "theme",
+    "pluralName": "themes",
+    "displayName": "Theme"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "preview": {
+      "enabled": true
+    }
+  },
+  "attributes": {
+    "fmgmBlueColor": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color",
+      "options": {
+        "format": "hex"
+      }
+    },
+    "fmgmGreenColor": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color",
+      "options": {
+        "format": "hex"
+      }
+    },
+    "fmgmLimeColor": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color",
+      "options": {
+        "format": "hex"
+      }
+    },
+    "fmgmBackgroudColor": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color",
+      "options": {
+        "format": "hex"
+      }
+    }
+  }
+}
