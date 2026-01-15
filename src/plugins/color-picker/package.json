@@ -1,0 +1,15 @@
+{
+  "name": "color-picker",
+  "version": "1.0.0",
+  "description": "A color picker custom field for Strapi",
+  "strapi": {
+    "displayName": "Color Picker",
+    "name": "color-picker",
+    "description": "Campo personalizado con selector de color",
+    "kind": "plugin"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
