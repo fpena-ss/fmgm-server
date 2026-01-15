@@ -22,6 +22,10 @@
         "images",
         "files"
       ]
+    },
+    "title": {
+      "type": "string",
+      "required": true
     }
   },
   "config": {}

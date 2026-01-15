@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_footer_legal_infos",
+  "info": {
+    "displayName": "legalInfo",
+    "icon": "key"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "links": {
+      "type": "component",
+      "component": "footer.info-link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

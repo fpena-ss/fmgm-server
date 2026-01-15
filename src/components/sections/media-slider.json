@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_media_sliders",
+  "info": {
+    "displayName": "mediaSlider",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "text": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

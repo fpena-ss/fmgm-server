@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_sections_text_slider_sections",
+  "info": {
+    "displayName": "textSliderSection",
+    "icon": "connector"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "component": "sections.text-slider",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

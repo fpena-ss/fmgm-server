@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_footer_info_links",
+  "info": {
+    "displayName": "infoLink",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}
