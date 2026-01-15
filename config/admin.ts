@@ -20,9 +20,10 @@ export default ({ env }) => ({
   preview: {
     enabled: true,
     config: {
-      allowedOrigins: env('CLIENT_URL', 'http://localhost:5173'),
+      allowedOrigins: env.array('CLIENT_URL', ['http://localhost:5173']),
       async handler(uid, { documentId, locale, status }) {
-        const clientUrl = env('CLIENT_URL', 'http://localhost:5173');
+        const clientUrls = env.array('CLIENT_URL', ['http://localhost:5173']);
+        const clientUrl = clientUrls[0];
         
         // Mapeo de content-types a rutas del frontend
         const routeMap: Record<string, string> = {
