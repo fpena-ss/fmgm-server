@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_sections_bodies",
+  "info": {
+    "displayName": "body"
+  },
+  "options": {},
+  "attributes": {
+    "sections": {
+      "type": "component",
+      "component": "sections.section",
+      "repeatable": true
+    },
+    "sliders": {
+      "type": "component",
+      "component": "sections.silder-section",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

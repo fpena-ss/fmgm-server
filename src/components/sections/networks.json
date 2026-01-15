@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_sections_networks",
+  "info": {
+    "displayName": "networks",
+    "icon": "oneToMany"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "default": "other",
+      "enum": [
+        "instagram",
+        "facebook",
+        "linkedin",
+        "other"
+      ]
+    }
+  },
+  "config": {}
+}

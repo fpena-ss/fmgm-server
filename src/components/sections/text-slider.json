@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_text_sliders",
+  "info": {
+    "displayName": "textSlider",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

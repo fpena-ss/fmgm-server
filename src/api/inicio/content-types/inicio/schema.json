@@ -11,21 +11,14 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "logo": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files"
+    "Body": {
+      "type": "dynamiczone",
+      "components": [
+        "sections.silder-section",
+        "sections.section",
+        "sections.media-slider",
+        "sections.text-slider-section"
       ]
-    },
-    "body": {
-      "type": "blocks",
-      "required": true
     }
   }
 }

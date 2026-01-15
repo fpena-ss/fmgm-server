@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_sections_sections",
+  "info": {
+    "displayName": "Section",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "blocks"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "imagesPosition": {
+      "type": "enumeration",
+      "default": "Right",
+      "enum": [
+        "Left",
+        "Right",
+        "Up",
+        "Down"
+      ]
+    },
+    "links": {
+      "type": "component",
+      "component": "forms.links",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}
