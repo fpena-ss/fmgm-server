@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_sections_lista_productos",
+  "info": {
+    "displayName": "Lista de Productos",
+    "icon": "shoppingCart"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": false
+    },
+    "vista": {
+      "type": "enumeration",
+      "enum": ["grid", "compacto", "lista"],
+      "default": "grid",
+      "required": false
+    },
+    "anchorId": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "config": {}
+}

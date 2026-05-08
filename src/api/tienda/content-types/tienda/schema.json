@@ -1,10 +1,11 @@
 {
   "kind": "singleType",
-  "collectionName": "about_uses",
+  "collectionName": "tiendas",
   "info": {
-    "singularName": "about-us",
-    "pluralName": "about-uses",
-    "displayName": "About Us"
+    "singularName": "tienda",
+    "pluralName": "tiendas",
+    "displayName": "Tienda",
+    "description": "Configuración de la tienda MGM"
   },
   "options": {
     "draftAndPublish": true
@@ -19,11 +20,22 @@
       "type": "string",
       "required": true
     },
-    "secciones": {
-      "type": "dynamiczone",
-      "components": [
-        "about.indexed-section"
-      ],
+    "descripcion": {
+      "type": "blocks"
+    },
+    "whatsappNumero": {
+      "type": "string",
+      "required": true
+    },
+    "whatsappMensaje": {
+      "type": "string",
+      "required": false,
+      "default": "Hola, estoy interesado en un producto de la tienda MGM."
+    },
+    "vista": {
+      "type": "enumeration",
+      "enum": ["grid", "compacto", "lista"],
+      "default": "grid",
       "required": false
     },
     "Body": {

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_about_video_embeds",
+  "info": {
+    "displayName": "Video Embebido",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "embedUrl": {
+      "type": "string",
+      "required": true
+    },
+    "plataforma": {
+      "type": "enumeration",
+      "enum": [
+        "youtube",
+        "vimeo",
+        "otro"
+      ],
+      "default": "youtube"
+    }
+  },
+  "config": {}
+}

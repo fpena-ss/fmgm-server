@@ -21,7 +21,11 @@
         "sections.silder-section",
         "sections.section",
         "sections.media-slider",
-        "sections.text-slider-section"
+        "sections.text-slider-section",
+        "sections.lista-productos",
+        "sections.galeria-documentos",
+        "sections.formulario-embebido",
+        "sections.mapa"
       ]
     }
   }

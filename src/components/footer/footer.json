@@ -33,6 +33,31 @@
       "type": "component",
       "component": "sections.networks",
       "repeatable": true
+    },
+    "politicaDatos": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "autorizacionDatos": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "esalUrl": {
+      "type": "string",
+      "required": false
+    },
+    "esalLabel": {
+      "type": "string",
+      "required": false,
+      "default": "Actualización en ESAL"
     }
   },
   "config": {}

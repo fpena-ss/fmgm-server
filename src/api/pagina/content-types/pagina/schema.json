@@ -1,10 +1,11 @@
 {
-  "kind": "singleType",
-  "collectionName": "about_uses",
+  "kind": "collectionType",
+  "collectionName": "paginas",
   "info": {
-    "singularName": "about-us",
-    "pluralName": "about-uses",
-    "displayName": "About Us"
+    "singularName": "pagina",
+    "pluralName": "paginas",
+    "displayName": "Páginas",
+    "description": "Páginas genéricas con contenido flexible"
   },
   "options": {
     "draftAndPublish": true
@@ -19,12 +20,10 @@
       "type": "string",
       "required": true
     },
-    "secciones": {
-      "type": "dynamiczone",
-      "components": [
-        "about.indexed-section"
-      ],
-      "required": false
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo",
+      "required": true
     },
     "Body": {
       "type": "dynamiczone",

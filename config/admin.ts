@@ -33,6 +33,10 @@ export default ({ env }) => ({
           'api::header-menu.header-menu': '/',
           'api::footer.footer': '/',
           'api::theme.theme': '/',
+          'api::tienda.tienda': '/tienda',
+          'api::linea.linea': '/',
+          'api::proyecto.proyecto': '/',
+          'api::producto.producto': '/tienda',
         };
         
         const route = routeMap[uid] || '/';

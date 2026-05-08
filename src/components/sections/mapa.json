@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_sections_mapas",
+  "info": {
+    "displayName": "Mapa",
+    "icon": "earth"
+  },
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": false
+    },
+    "urlEmbebida": {
+      "type": "text",
+      "required": false
+    },
+    "latitud": {
+      "type": "decimal",
+      "required": false
+    },
+    "longitud": {
+      "type": "decimal",
+      "required": false
+    },
+    "zoom": {
+      "type": "integer",
+      "required": false,
+      "default": 15
+    },
+    "etiqueta": {
+      "type": "string",
+      "required": false
+    },
+    "altura": {
+      "type": "integer",
+      "required": false,
+      "default": 420
+    },
+    "anchorId": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

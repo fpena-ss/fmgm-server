@@ -22,6 +22,10 @@
     },
     "link": {
       "type": "string"
+    },
+    "anchorId": {
+      "type": "string",
+      "required": false
     }
   },
   "config": {}
