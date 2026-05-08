@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_formularios_embebidos",
+  "info": {
+    "displayName": "Formulario Embebido",
+    "icon": "paperPlane"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": false
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "altura": {
+      "type": "integer",
+      "required": false,
+      "default": 600
+    },
+    "anchorId": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "config": {}
+}

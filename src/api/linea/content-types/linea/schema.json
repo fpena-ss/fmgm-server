@@ -1,10 +1,11 @@
 {
-  "kind": "singleType",
-  "collectionName": "contact_uses",
+  "kind": "collectionType",
+  "collectionName": "lineas",
   "info": {
-    "singularName": "contact-us",
-    "pluralName": "contact-uses",
-    "displayName": "Contact Us"
+    "singularName": "linea",
+    "pluralName": "lineas",
+    "displayName": "Líneas de Proyectos",
+    "description": "Las 5 líneas estratégicas de MGM"
   },
   "options": {
     "draftAndPublish": true
@@ -15,27 +16,35 @@
     }
   },
   "attributes": {
-    "title": {
+    "nombre": {
       "type": "string",
       "required": true
     },
-    "body": {
-      "type": "blocks",
+    "slug": {
+      "type": "uid",
+      "targetField": "nombre",
       "required": true
     },
-    "contactInfo": {
-      "type": "component",
-      "component": "forms.contact-info",
-      "repeatable": false,
-      "required": true
+    "descripcion": {
+      "type": "blocks"
     },
-    "image": {
+    "imagen": {
       "type": "media",
       "multiple": false,
+      "required": false,
       "allowedTypes": [
-        "images",
-        "files"
+        "images"
       ]
+    },
+    "orden": {
+      "type": "integer",
+      "default": 0
+    },
+    "proyectos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::proyecto.proyecto",
+      "mappedBy": "linea"
     },
     "Body": {
       "type": "dynamiczone",

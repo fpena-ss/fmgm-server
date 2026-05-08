@@ -446,14 +446,21 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    Body: Schema.Attribute.DynamicZone<
+      [
+        'sections.silder-section',
+        'sections.section',
+        'sections.media-slider',
+        'sections.text-slider-section',
+        'sections.lista-productos',
+        'sections.galeria-documentos',
+        'sections.formulario-embebido',
+        'sections.mapa',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    images: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -461,7 +468,8 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    secciones: Schema.Attribute.DynamicZone<['about.indexed-section']>;
+    titulo: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -485,6 +493,18 @@ export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
   };
   attributes: {
     body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    Body: Schema.Attribute.DynamicZone<
+      [
+        'sections.silder-section',
+        'sections.section',
+        'sections.media-slider',
+        'sections.text-slider-section',
+        'sections.lista-productos',
+        'sections.galeria-documentos',
+        'sections.formulario-embebido',
+        'sections.mapa',
+      ]
+    >;
     contactInfo: Schema.Attribute.Component<'forms.contact-info', false> &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
@@ -595,6 +615,10 @@ export interface ApiInicioInicio extends Struct.SingleTypeSchema {
         'sections.section',
         'sections.media-slider',
         'sections.text-slider-section',
+        'sections.lista-productos',
+        'sections.galeria-documentos',
+        'sections.formulario-embebido',
+        'sections.mapa',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -607,6 +631,181 @@ export interface ApiInicioInicio extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLineaLinea extends Struct.CollectionTypeSchema {
+  collectionName: 'lineas';
+  info: {
+    description: 'Las 5 l\u00EDneas estrat\u00E9gicas de MGM';
+    displayName: 'L\u00EDneas de Proyectos';
+    pluralName: 'lineas';
+    singularName: 'linea';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    preview: {
+      enabled: true;
+    };
+  };
+  attributes: {
+    Body: Schema.Attribute.DynamicZone<
+      [
+        'sections.silder-section',
+        'sections.section',
+        'sections.media-slider',
+        'sections.text-slider-section',
+        'sections.lista-productos',
+        'sections.galeria-documentos',
+        'sections.formulario-embebido',
+        'sections.mapa',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descripcion: Schema.Attribute.Blocks;
+    imagen: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::linea.linea'> &
+      Schema.Attribute.Private;
+    nombre: Schema.Attribute.String & Schema.Attribute.Required;
+    orden: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    proyectos: Schema.Attribute.Relation<'oneToMany', 'api::proyecto.proyecto'>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'nombre'> & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPaginaPagina extends Struct.CollectionTypeSchema {
+  collectionName: 'paginas';
+  info: {
+    description: 'P\u00E1ginas gen\u00E9ricas con contenido flexible';
+    displayName: 'P\u00E1ginas';
+    pluralName: 'paginas';
+    singularName: 'pagina';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    preview: {
+      enabled: true;
+    };
+  };
+  attributes: {
+    Body: Schema.Attribute.DynamicZone<
+      [
+        'sections.silder-section',
+        'sections.section',
+        'sections.media-slider',
+        'sections.text-slider-section',
+        'sections.lista-productos',
+        'sections.galeria-documentos',
+        'sections.formulario-embebido',
+        'sections.mapa',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pagina.pagina'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'titulo'> & Schema.Attribute.Required;
+    titulo: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProductoProducto extends Struct.CollectionTypeSchema {
+  collectionName: 'productos';
+  info: {
+    description: 'Productos disponibles en la tienda';
+    displayName: 'Productos';
+    pluralName: 'productos';
+    singularName: 'producto';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    preview: {
+      enabled: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descripcion: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    destacado: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    disponible: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    hayStock: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    imagenes: Schema.Attribute.Media<'images' | 'videos', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::producto.producto'
+    > &
+      Schema.Attribute.Private;
+    nombre: Schema.Attribute.String & Schema.Attribute.Required;
+    precio: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'nombre'> & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProyectoProyecto extends Struct.CollectionTypeSchema {
+  collectionName: 'proyectos';
+  info: {
+    description: 'Proyectos agrupados por l\u00EDnea estrat\u00E9gica';
+    displayName: 'Proyectos';
+    pluralName: 'proyectos';
+    singularName: 'proyecto';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    preview: {
+      enabled: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descripcion: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    imagenes: Schema.Attribute.Media<'images', true>;
+    linea: Schema.Attribute.Relation<'manyToOne', 'api::linea.linea'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::proyecto.proyecto'
+    > &
+      Schema.Attribute.Private;
+    nombre: Schema.Attribute.String & Schema.Attribute.Required;
+    orden: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'nombre'> & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -667,6 +866,58 @@ export interface ApiThemeTheme extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTiendaTienda extends Struct.SingleTypeSchema {
+  collectionName: 'tiendas';
+  info: {
+    description: 'Configuraci\u00F3n de la tienda MGM';
+    displayName: 'Tienda';
+    pluralName: 'tiendas';
+    singularName: 'tienda';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    preview: {
+      enabled: true;
+    };
+  };
+  attributes: {
+    Body: Schema.Attribute.DynamicZone<
+      [
+        'sections.silder-section',
+        'sections.section',
+        'sections.media-slider',
+        'sections.text-slider-section',
+        'sections.lista-productos',
+        'sections.galeria-documentos',
+        'sections.formulario-embebido',
+        'sections.mapa',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descripcion: Schema.Attribute.Blocks;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tienda.tienda'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    vista: Schema.Attribute.Enumeration<['grid', 'compacto', 'lista']> &
+      Schema.Attribute.DefaultTo<'grid'>;
+    whatsappMensaje: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Hola, estoy interesado en un producto de la tienda MGM.'>;
+    whatsappNumero: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -1185,7 +1436,12 @@ declare module '@strapi/strapi' {
       'api::footer.footer': ApiFooterFooter;
       'api::header-menu.header-menu': ApiHeaderMenuHeaderMenu;
       'api::inicio.inicio': ApiInicioInicio;
+      'api::linea.linea': ApiLineaLinea;
+      'api::pagina.pagina': ApiPaginaPagina;
+      'api::producto.producto': ApiProductoProducto;
+      'api::proyecto.proyecto': ApiProyectoProyecto;
       'api::theme.theme': ApiThemeTheme;
+      'api::tienda.tienda': ApiTiendaTienda;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

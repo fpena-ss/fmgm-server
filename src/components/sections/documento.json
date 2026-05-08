@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sections_documentos",
+  "info": {
+    "displayName": "Documento",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "archivo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  },
+  "config": {}
+}

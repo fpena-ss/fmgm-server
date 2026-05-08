@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_sections_galeria_documentos",
+  "info": {
+    "displayName": "Galería de Documentos",
+    "icon": "folder"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": false
+    },
+    "documentos": {
+      "type": "component",
+      "component": "sections.documento",
+      "repeatable": true,
+      "required": false
+    },
+    "anchorId": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "config": {}
+}

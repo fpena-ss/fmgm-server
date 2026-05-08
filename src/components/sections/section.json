@@ -18,7 +18,8 @@
       "multiple": true,
       "allowedTypes": [
         "images",
-        "files"
+        "files",
+        "videos"
       ]
     },
     "imagesPosition": {
@@ -35,6 +36,10 @@
       "type": "component",
       "component": "forms.links",
       "repeatable": false
+    },
+    "anchorId": {
+      "type": "string",
+      "required": false
     }
   },
   "config": {}

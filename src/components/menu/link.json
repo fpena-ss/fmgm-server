@@ -12,7 +12,7 @@
     },
     "url": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "icon": {
       "type": "media",
@@ -30,6 +30,27 @@
         "link",
         "button"
       ]
+    },
+    "navType": {
+      "type": "enumeration",
+      "required": true,
+      "default": "internal",
+      "enum": [
+        "internal",
+        "anchor",
+        "external",
+        "dropdown"
+      ]
+    },
+    "openInNewTab": {
+      "type": "boolean",
+      "default": false
+    },
+    "subItems": {
+      "type": "component",
+      "component": "menu.dropdown-item",
+      "repeatable": true,
+      "required": false
     }
   },
   "config": {}

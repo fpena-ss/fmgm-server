@@ -14,6 +14,10 @@
       "type": "component",
       "component": "sections.text-slider",
       "repeatable": true
+    },
+    "anchorId": {
+      "type": "string",
+      "required": false
     }
   },
   "config": {}

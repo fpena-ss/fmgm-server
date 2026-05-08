@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proyectos",
+  "info": {
+    "singularName": "proyecto",
+    "pluralName": "proyectos",
+    "displayName": "Proyectos",
+    "description": "Proyectos agrupados por línea estratégica"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "preview": {
+      "enabled": true
+    }
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nombre",
+      "required": true
+    },
+    "descripcion": {
+      "type": "blocks",
+      "required": true
+    },
+    "imagenes": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "linea": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::linea.linea",
+      "inversedBy": "proyectos"
+    },
+    "orden": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

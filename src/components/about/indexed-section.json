@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_about_indexed_sections",
+  "info": {
+    "displayName": "Sección Indexada",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "anchorId": {
+      "type": "string",
+      "required": true
+    },
+    "cuerpo": {
+      "type": "blocks"
+    },
+    "imagenes": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "videosEmbedded": {
+      "type": "component",
+      "component": "about.video-embed",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
